@@ -40,7 +40,10 @@ public class onXPBookUsage implements Listener {
                 updateBookMeta(meta, item, xpBookXP);
             }
         } else {
-            if(player.getLevel() == 0) return;
+            if(player.getLevel() < 1) {
+                player.sendMessage("Du hast nicht genügend XP!");
+                return;
+            }
             if(player.getExp() == 0) return;
 
             // Store XP in the book
